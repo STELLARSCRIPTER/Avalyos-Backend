@@ -1,0 +1,2746 @@
+{
+  "continents": {
+    "Asia": {
+      "countries": {
+        "India": {
+          "states": {
+            "Tamil Nadu": [
+              "Chennai",
+              "Coimbatore",
+              "Madurai",
+              "Salem"
+            ],
+            "Karnataka": [
+              "Bangalore",
+              "Mysuru",
+              "Mangalore",
+              "Belgaum"
+            ],
+            "Maharashtra": [
+              "Mumbai",
+              "Pune",
+              "Nagpur",
+              "Aurangabad"
+            ],
+            "Telangana": [
+              "Hyderabad",
+              "Secunderabad",
+              "Warangal",
+              "Nizamabad"
+            ],
+            "Gujarat": [
+              "Ahmedabad",
+              "Surat",
+              "Vadodara",
+              "Rajkot"
+            ],
+            "Uttar Pradesh": [
+              "Delhi",
+              "Noida",
+              "Lucknow",
+              "Kanpur"
+            ]
+          }
+        },
+        "China": {
+          "states": {
+            "Shanghai": [
+              "Shanghai",
+              "Pudong",
+              "Huangpu",
+              "Minhang"
+            ],
+            "Beijing": [
+              "Beijing",
+              "Chaoyang",
+              "Haidian",
+              "Dongcheng"
+            ],
+            "Guangdong": [
+              "Shenzhen",
+              "Guangzhou",
+              "Foshan",
+              "Zhuhai"
+            ],
+            "Zhejiang": [
+              "Hangzhou",
+              "Ningbo",
+              "Jiaxing",
+              "Huzhou"
+            ]
+          }
+        },
+        "Japan": {
+          "states": {
+            "Tokyo": [
+              "Tokyo",
+              "Shibuya",
+              "Shinjuku",
+              "Minato"
+            ],
+            "Osaka": [
+              "Osaka",
+              "Kobe",
+              "Kyoto",
+              "Kobe"
+            ],
+            "Kanagawa": [
+              "Yokohama",
+              "Kawasaki",
+              "Sagamihara"
+            ]
+          }
+        },
+        "Singapore": {
+          "states": {
+            "Central": [
+              "Singapore",
+              "Marina Bay",
+              "Raffles"
+            ],
+            "East": [
+              "Changi",
+              "Bedok",
+              "Pasir Ris"
+            ],
+            "West": [
+              "Jurong",
+              "Clementi",
+              "Bukit Batok"
+            ]
+          }
+        },
+        "South Korea": {
+          "states": {
+            "Seoul": [
+              "Seoul",
+              "Gangnam",
+              "Songpa",
+              "Jung"
+            ],
+            "Gyeonggi": [
+              "Suwon",
+              "Incheon",
+              "Seongnam"
+            ],
+            "Busan": [
+              "Busan",
+              "Haeundae",
+              "Seo-gu"
+            ]
+          }
+        }
+      }
+    },
+    "Europe": {
+      "countries": {
+        "United Kingdom": {
+          "states": {
+            "England": [
+              "London",
+              "Manchester",
+              "Birmingham",
+              "Liverpool"
+            ],
+            "Scotland": [
+              "Edinburgh",
+              "Glasgow",
+              "Aberdeen",
+              "Dundee"
+            ],
+            "Wales": [
+              "Cardiff",
+              "Swansea",
+              "Newport"
+            ]
+          }
+        },
+        "Germany": {
+          "states": {
+            "Berlin": [
+              "Berlin",
+              "Charlottenburg",
+              "Kreuzberg"
+            ],
+            "Bavaria": [
+              "Munich",
+              "Nuremberg",
+              "Augsburg"
+            ],
+            "North Rhine": [
+              "Cologne",
+              "Düsseldorf",
+              "Dortmund"
+            ],
+            "Hamburg": [
+              "Hamburg",
+              "Altona",
+              "Wandsbek"
+            ]
+          }
+        },
+        "France": {
+          "states": {
+            "Île-de-France": [
+              "Paris",
+              "Versailles",
+              "Boulogne"
+            ],
+            "Provence": [
+              "Marseille",
+              "Aix-en-Provence",
+              "Nice"
+            ],
+            "Auvergne": [
+              "Lyon",
+              "Saint-Étienne",
+              "Grenoble"
+            ]
+          }
+        },
+        "Netherlands": {
+          "states": {
+            "North Holland": [
+              "Amsterdam",
+              "Haarlem",
+              "Zaandam"
+            ],
+            "South Holland": [
+              "Rotterdam",
+              "The Hague",
+              "Delft"
+            ]
+          }
+        },
+        "Switzerland": {
+          "states": {
+            "Zurich": [
+              "Zurich",
+              "Winterthur"
+            ],
+            "Geneva": [
+              "Geneva",
+              "Lausanne",
+              "Montreux"
+            ],
+            "Basel": [
+              "Basel",
+              "Liestal"
+            ]
+          }
+        }
+      }
+    },
+    "North America": {
+      "countries": {
+        "United States": {
+          "states": {
+            "California": [
+              "San Francisco",
+              "Los Angeles",
+              "San Diego",
+              "Sacramento"
+            ],
+            "New York": [
+              "New York City",
+              "Buffalo",
+              "Rochester"
+            ],
+            "Texas": [
+              "Houston",
+              "Dallas",
+              "Austin",
+              "San Antonio"
+            ],
+            "Washington": [
+              "Seattle",
+              "Redmond",
+              "Tacoma"
+            ]
+          }
+        },
+        "Canada": {
+          "states": {
+            "Ontario": [
+              "Toronto",
+              "Ottawa",
+              "Hamilton"
+            ],
+            "British Columbia": [
+              "Vancouver",
+              "Victoria",
+              "Surrey"
+            ],
+            "Quebec": [
+              "Montreal",
+              "Quebec City"
+            ]
+          }
+        },
+        "Mexico": {
+          "states": {
+            "Mexico City": [
+              "Mexico City",
+              "Benito Juárez"
+            ],
+            "State of Mexico": [
+              "Ecatepec",
+              "Naucalpan"
+            ]
+          }
+        }
+      }
+    },
+    "South America": {
+      "countries": {
+        "Brazil": {
+          "states": {
+            "São Paulo": [
+              "São Paulo",
+              "Santos",
+              "Campinas"
+            ],
+            "Rio de Janeiro": [
+              "Rio de Janeiro",
+              "Niterói"
+            ],
+            "Minas Gerais": [
+              "Belo Horizonte",
+              "Uberlândia"
+            ]
+          }
+        },
+        "Argentina": {
+          "states": {
+            "Buenos Aires": [
+              "Buenos Aires",
+              "La Plata"
+            ],
+            "Córdoba": [
+              "Córdoba",
+              "Rosario"
+            ]
+          }
+        },
+        "Chile": {
+          "states": {
+            "Metropolitana": [
+              "Santiago",
+              "Puente Alto",
+              "San Bernardo"
+            ],
+            "Valparaíso": [
+              "Valparaíso",
+              "Viña del Mar"
+            ]
+          }
+        }
+      }
+    },
+    "Africa": {
+      "countries": {
+        "South Africa": {
+          "states": {
+            "Gauteng": [
+              "Johannesburg",
+              "Pretoria",
+              "Soweto"
+            ],
+            "Western Cape": [
+              "Cape Town",
+              "Stellenbosch"
+            ]
+          }
+        },
+        "Nigeria": {
+          "states": {
+            "Lagos": [
+              "Lagos",
+              "Victoria Island"
+            ],
+            "Federal Capital": [
+              "Abuja",
+              "Gwagwalada"
+            ]
+          }
+        },
+        "Egypt": {
+          "states": {
+            "Cairo": [
+              "Cairo",
+              "Giza",
+              "Helwan"
+            ],
+            "Alexandria": [
+              "Alexandria",
+              "Aboukir"
+            ]
+          }
+        }
+      }
+    },
+    "Oceania": {
+      "countries": {
+        "Australia": {
+          "states": {
+            "New South Wales": [
+              "Sydney",
+              "Newcastle",
+              "Wollongong"
+            ],
+            "Victoria": [
+              "Melbourne",
+              "Geelong",
+              "Ballarat"
+            ],
+            "Queensland": [
+              "Brisbane",
+              "Gold Coast",
+              "Sunshine Coast"
+            ]
+          }
+        },
+        "New Zealand": {
+          "states": {
+            "Auckland": [
+              "Auckland",
+              "Manukau"
+            ],
+            "Wellington": [
+              "Wellington",
+              "Hutt Valley"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "companies": {
+    "Microsoft": {
+      "code": "ms",
+      "sector": "Technology",
+      "subsector": "Cloud Computing",
+      "description": "Global technology leader in cloud, AI, and enterprise software",
+      "branches": {
+        "ms01": {
+          "code": "ms01",
+          "name": "Microsoft - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 12000,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Madurai, India"
+        },
+        "ms02": {
+          "code": "ms02",
+          "name": "Microsoft - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 8500,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Mangalore, India"
+        },
+        "ms03": {
+          "code": "ms03",
+          "name": "Microsoft - Nagpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Nagpur",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Nagpur, India"
+        },
+        "ms04": {
+          "code": "ms04",
+          "name": "Microsoft - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 4200,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Warangal, India"
+        },
+        "ms05": {
+          "code": "ms05",
+          "name": "Microsoft - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 2800,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Rajkot, India"
+        },
+        "ms06": {
+          "code": "ms06",
+          "name": "Microsoft - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 6500,
+          "sector": "Technology",
+          "subsector": "Cloud Computing",
+          "description": "Microsoft branch in Noida, India"
+        }
+      }
+    },
+    "Google": {
+      "code": "gg",
+      "sector": "Technology",
+      "subsector": "Search & Advertising",
+      "description": "World leader in search, advertising, and AI research",
+      "branches": {
+        "gg01": {
+          "code": "gg01",
+          "name": "Google - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 18000,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Chennai, India"
+        },
+        "gg02": {
+          "code": "gg02",
+          "name": "Google - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 50000,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Belgaum, India"
+        },
+        "gg03": {
+          "code": "gg03",
+          "name": "Google - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 9000,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Mumbai, India"
+        },
+        "gg04": {
+          "code": "gg04",
+          "name": "Google - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Hyderabad, India"
+        },
+        "gg05": {
+          "code": "gg05",
+          "name": "Google - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 4200,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Rajkot, India"
+        },
+        "gg06": {
+          "code": "gg06",
+          "name": "Google - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "Search & Advertising",
+          "description": "Google branch in Lucknow, India"
+        }
+      }
+    },
+    "Amazon": {
+      "code": "az",
+      "sector": "Technology",
+      "subsector": "Cloud & Retail",
+      "description": "E-commerce and cloud computing giant",
+      "branches": {
+        "az01": {
+          "code": "az01",
+          "name": "Amazon - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 15000,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Salem, India"
+        },
+        "az02": {
+          "code": "az02",
+          "name": "Amazon - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 45000,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Belgaum, India"
+        },
+        "az03": {
+          "code": "az03",
+          "name": "Amazon - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 8000,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Pune, India"
+        },
+        "az04": {
+          "code": "az04",
+          "name": "Amazon - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 6000,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Warangal, India"
+        },
+        "az05": {
+          "code": "az05",
+          "name": "Amazon - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Ahmedabad, India"
+        },
+        "az06": {
+          "code": "az06",
+          "name": "Amazon - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 2800,
+          "sector": "Technology",
+          "subsector": "Cloud & Retail",
+          "description": "Amazon branch in Noida, India"
+        }
+      }
+    },
+    "Apple": {
+      "code": "ap",
+      "sector": "Technology",
+      "subsector": "Consumer Electronics",
+      "description": "Premium consumer electronics and software company",
+      "branches": {
+        "ap01": {
+          "code": "ap01",
+          "name": "Apple - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 8000,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Madurai, India"
+        },
+        "ap02": {
+          "code": "ap02",
+          "name": "Apple - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 32000,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Mysuru, India"
+        },
+        "ap03": {
+          "code": "ap03",
+          "name": "Apple - Aurangabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Aurangabad",
+          "employees": 4500,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Aurangabad, India"
+        },
+        "ap04": {
+          "code": "ap04",
+          "name": "Apple - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 3200,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Warangal, India"
+        },
+        "ap05": {
+          "code": "ap05",
+          "name": "Apple - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Ahmedabad, India"
+        },
+        "ap06": {
+          "code": "ap06",
+          "name": "Apple - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 1800,
+          "sector": "Technology",
+          "subsector": "Consumer Electronics",
+          "description": "Apple branch in Kanpur, India"
+        }
+      }
+    },
+    "Meta": {
+      "code": "fb",
+      "sector": "Technology",
+      "subsector": "Social Media",
+      "description": "Social media and metaverse platform leader",
+      "branches": {
+        "fb01": {
+          "code": "fb01",
+          "name": "Meta - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 6500,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Madurai, India"
+        },
+        "fb02": {
+          "code": "fb02",
+          "name": "Meta - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 28000,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Bangalore, India"
+        },
+        "fb03": {
+          "code": "fb03",
+          "name": "Meta - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Pune, India"
+        },
+        "fb04": {
+          "code": "fb04",
+          "name": "Meta - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 2800,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Warangal, India"
+        },
+        "fb05": {
+          "code": "fb05",
+          "name": "Meta - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1500,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Rajkot, India"
+        },
+        "fb06": {
+          "code": "fb06",
+          "name": "Meta - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 1200,
+          "sector": "Technology",
+          "subsector": "Social Media",
+          "description": "Meta branch in Kanpur, India"
+        }
+      }
+    },
+    "Tesla": {
+      "code": "ts",
+      "sector": "Automotive",
+      "subsector": "Electric Vehicles",
+      "description": "Electric vehicle and renewable energy innovator",
+      "branches": {
+        "ts01": {
+          "code": "ts01",
+          "name": "Tesla - Coimbatore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Coimbatore",
+          "employees": 5000,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Coimbatore, India"
+        },
+        "ts02": {
+          "code": "ts02",
+          "name": "Tesla - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 22000,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Mysuru, India"
+        },
+        "ts03": {
+          "code": "ts03",
+          "name": "Tesla - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 2800,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Mumbai, India"
+        },
+        "ts04": {
+          "code": "ts04",
+          "name": "Tesla - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 1500,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Nizamabad, India"
+        },
+        "ts05": {
+          "code": "ts05",
+          "name": "Tesla - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 900,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Vadodara, India"
+        },
+        "ts06": {
+          "code": "ts06",
+          "name": "Tesla - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 700,
+          "sector": "Automotive",
+          "subsector": "Electric Vehicles",
+          "description": "Tesla branch in Delhi, India"
+        }
+      }
+    },
+    "Toyota": {
+      "code": "ty",
+      "sector": "Automotive",
+      "subsector": "Vehicle Manufacturing",
+      "description": "World's largest automotive manufacturer",
+      "branches": {
+        "ty01": {
+          "code": "ty01",
+          "name": "Toyota - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 12000,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Chennai, India"
+        },
+        "ty02": {
+          "code": "ty02",
+          "name": "Toyota - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 42000,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Mysuru, India"
+        },
+        "ty03": {
+          "code": "ty03",
+          "name": "Toyota - Aurangabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Aurangabad",
+          "employees": 8500,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Aurangabad, India"
+        },
+        "ty04": {
+          "code": "ty04",
+          "name": "Toyota - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 5500,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Nizamabad, India"
+        },
+        "ty05": {
+          "code": "ty05",
+          "name": "Toyota - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 3200,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Vadodara, India"
+        },
+        "ty06": {
+          "code": "ty06",
+          "name": "Toyota - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 2100,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Toyota branch in Noida, India"
+        }
+      }
+    },
+    "BMW": {
+      "code": "bm",
+      "sector": "Automotive",
+      "subsector": "Luxury Vehicles",
+      "description": "Luxury vehicle manufacturer and innovator",
+      "branches": {
+        "bm01": {
+          "code": "bm01",
+          "name": "BMW - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 7500,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Salem, India"
+        },
+        "bm02": {
+          "code": "bm02",
+          "name": "BMW - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 28000,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Bangalore, India"
+        },
+        "bm03": {
+          "code": "bm03",
+          "name": "BMW - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 5200,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Pune, India"
+        },
+        "bm04": {
+          "code": "bm04",
+          "name": "BMW - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 3500,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Hyderabad, India"
+        },
+        "bm05": {
+          "code": "bm05",
+          "name": "BMW - Surat",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Surat",
+          "employees": 2100,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Surat, India"
+        },
+        "bm06": {
+          "code": "bm06",
+          "name": "BMW - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 1600,
+          "sector": "Automotive",
+          "subsector": "Luxury Vehicles",
+          "description": "BMW branch in Noida, India"
+        }
+      }
+    },
+    "Volkswagen": {
+      "code": "vw",
+      "sector": "Automotive",
+      "subsector": "Vehicle Manufacturing",
+      "description": "Major European automotive group",
+      "branches": {
+        "vw01": {
+          "code": "vw01",
+          "name": "Volkswagen - Coimbatore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Coimbatore",
+          "employees": 9000,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Coimbatore, India"
+        },
+        "vw02": {
+          "code": "vw02",
+          "name": "Volkswagen - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 35000,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Bangalore, India"
+        },
+        "vw03": {
+          "code": "vw03",
+          "name": "Volkswagen - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 6500,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Pune, India"
+        },
+        "vw04": {
+          "code": "vw04",
+          "name": "Volkswagen - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 4200,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Nizamabad, India"
+        },
+        "vw05": {
+          "code": "vw05",
+          "name": "Volkswagen - Surat",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Surat",
+          "employees": 2500,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Surat, India"
+        },
+        "vw06": {
+          "code": "vw06",
+          "name": "Volkswagen - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 1800,
+          "sector": "Automotive",
+          "subsector": "Vehicle Manufacturing",
+          "description": "Volkswagen branch in Lucknow, India"
+        }
+      }
+    },
+    "Siemens": {
+      "code": "sb",
+      "sector": "Industrial",
+      "subsector": "Conglomerate",
+      "description": "Diversified industrial manufacturing company",
+      "branches": {
+        "sb01": {
+          "code": "sb01",
+          "name": "Siemens - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 8000,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Salem, India"
+        },
+        "sb02": {
+          "code": "sb02",
+          "name": "Siemens - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 32000,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Belgaum, India"
+        },
+        "sb03": {
+          "code": "sb03",
+          "name": "Siemens - Aurangabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Aurangabad",
+          "employees": 5500,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Aurangabad, India"
+        },
+        "sb04": {
+          "code": "sb04",
+          "name": "Siemens - Secunderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Secunderabad",
+          "employees": 3500,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Secunderabad, India"
+        },
+        "sb05": {
+          "code": "sb05",
+          "name": "Siemens - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 2200,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Ahmedabad, India"
+        },
+        "sb06": {
+          "code": "sb06",
+          "name": "Siemens - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 1600,
+          "sector": "Industrial",
+          "subsector": "Conglomerate",
+          "description": "Siemens branch in Lucknow, India"
+        }
+      }
+    },
+    "Philips": {
+      "code": "ph",
+      "sector": "Healthcare",
+      "subsector": "Medical Devices",
+      "description": "Healthcare technology and consumer electronics",
+      "branches": {
+        "ph01": {
+          "code": "ph01",
+          "name": "Philips - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 5500,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Chennai, India"
+        },
+        "ph02": {
+          "code": "ph02",
+          "name": "Philips - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 22000,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Mangalore, India"
+        },
+        "ph03": {
+          "code": "ph03",
+          "name": "Philips - Nagpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Nagpur",
+          "employees": 3800,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Nagpur, India"
+        },
+        "ph04": {
+          "code": "ph04",
+          "name": "Philips - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 2500,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Hyderabad, India"
+        },
+        "ph05": {
+          "code": "ph05",
+          "name": "Philips - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 1500,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Ahmedabad, India"
+        },
+        "ph06": {
+          "code": "ph06",
+          "name": "Philips - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 1200,
+          "sector": "Healthcare",
+          "subsector": "Medical Devices",
+          "description": "Philips branch in Delhi, India"
+        }
+      }
+    },
+    "BASF": {
+      "code": "bf",
+      "sector": "Chemicals",
+      "subsector": "Chemical Manufacturing",
+      "description": "World's largest chemical producer",
+      "branches": {
+        "bf01": {
+          "code": "bf01",
+          "name": "BASF - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 6000,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Chennai, India"
+        },
+        "bf02": {
+          "code": "bf02",
+          "name": "BASF - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 24000,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Belgaum, India"
+        },
+        "bf03": {
+          "code": "bf03",
+          "name": "BASF - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 4200,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Pune, India"
+        },
+        "bf04": {
+          "code": "bf04",
+          "name": "BASF - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 2800,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Nizamabad, India"
+        },
+        "bf05": {
+          "code": "bf05",
+          "name": "BASF - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1800,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Rajkot, India"
+        },
+        "bf06": {
+          "code": "bf06",
+          "name": "BASF - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 1400,
+          "sector": "Chemicals",
+          "subsector": "Chemical Manufacturing",
+          "description": "BASF branch in Delhi, India"
+        }
+      }
+    },
+    "ASML": {
+      "code": "as",
+      "sector": "Technology",
+      "subsector": "Semiconductor Equipment",
+      "description": "Leading semiconductor equipment manufacturer",
+      "branches": {
+        "as01": {
+          "code": "as01",
+          "name": "ASML - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 3000,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Salem, India"
+        },
+        "as02": {
+          "code": "as02",
+          "name": "ASML - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 12000,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Mangalore, India"
+        },
+        "as03": {
+          "code": "as03",
+          "name": "ASML - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 1800,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Pune, India"
+        },
+        "as04": {
+          "code": "as04",
+          "name": "ASML - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 1200,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Hyderabad, India"
+        },
+        "as05": {
+          "code": "as05",
+          "name": "ASML - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 800,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Vadodara, India"
+        },
+        "as06": {
+          "code": "as06",
+          "name": "ASML - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 600,
+          "sector": "Technology",
+          "subsector": "Semiconductor Equipment",
+          "description": "ASML branch in Kanpur, India"
+        }
+      }
+    },
+    "Samsung": {
+      "code": "sg",
+      "sector": "Technology",
+      "subsector": "Electronics",
+      "description": "Korean electronics and semiconductor giant",
+      "branches": {
+        "sg01": {
+          "code": "sg01",
+          "name": "Samsung - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 11000,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Chennai, India"
+        },
+        "sg02": {
+          "code": "sg02",
+          "name": "Samsung - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 44000,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Bangalore, India"
+        },
+        "sg03": {
+          "code": "sg03",
+          "name": "Samsung - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 7500,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Mumbai, India"
+        },
+        "sg04": {
+          "code": "sg04",
+          "name": "Samsung - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 5000,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Hyderabad, India"
+        },
+        "sg05": {
+          "code": "sg05",
+          "name": "Samsung - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 3000,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Ahmedabad, India"
+        },
+        "sg06": {
+          "code": "sg06",
+          "name": "Samsung - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 2000,
+          "sector": "Technology",
+          "subsector": "Electronics",
+          "description": "Samsung branch in Noida, India"
+        }
+      }
+    },
+    "TSMC": {
+      "code": "tm",
+      "sector": "Technology",
+      "subsector": "Semiconductor Manufacturing",
+      "description": "World's leading chip foundry",
+      "branches": {
+        "tm01": {
+          "code": "tm01",
+          "name": "TSMC - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 8500,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Salem, India"
+        },
+        "tm02": {
+          "code": "tm02",
+          "name": "TSMC - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 34000,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Bangalore, India"
+        },
+        "tm03": {
+          "code": "tm03",
+          "name": "TSMC - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Mumbai, India"
+        },
+        "tm04": {
+          "code": "tm04",
+          "name": "TSMC - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Nizamabad, India"
+        },
+        "tm05": {
+          "code": "tm05",
+          "name": "TSMC - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Vadodara, India"
+        },
+        "tm06": {
+          "code": "tm06",
+          "name": "TSMC - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 1500,
+          "sector": "Technology",
+          "subsector": "Semiconductor Manufacturing",
+          "description": "TSMC branch in Delhi, India"
+        }
+      }
+    },
+    "Intel": {
+      "code": "in",
+      "sector": "Technology",
+      "subsector": "Semiconductors",
+      "description": "Microprocessor and semiconductor leader",
+      "branches": {
+        "in01": {
+          "code": "in01",
+          "name": "Intel - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 7000,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Salem, India"
+        },
+        "in02": {
+          "code": "in02",
+          "name": "Intel - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 28000,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Bangalore, India"
+        },
+        "in03": {
+          "code": "in03",
+          "name": "Intel - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 4500,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Pune, India"
+        },
+        "in04": {
+          "code": "in04",
+          "name": "Intel - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 3000,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Nizamabad, India"
+        },
+        "in05": {
+          "code": "in05",
+          "name": "Intel - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1800,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Rajkot, India"
+        },
+        "in06": {
+          "code": "in06",
+          "name": "Intel - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 1300,
+          "sector": "Technology",
+          "subsector": "Semiconductors",
+          "description": "Intel branch in Delhi, India"
+        }
+      }
+    },
+    "NVIDIA": {
+      "code": "nv",
+      "sector": "Technology",
+      "subsector": "AI Processors",
+      "description": "AI and GPU computing leader",
+      "branches": {
+        "nv01": {
+          "code": "nv01",
+          "name": "NVIDIA - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Salem, India"
+        },
+        "nv02": {
+          "code": "nv02",
+          "name": "NVIDIA - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 22000,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Mangalore, India"
+        },
+        "nv03": {
+          "code": "nv03",
+          "name": "NVIDIA - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 3200,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Mumbai, India"
+        },
+        "nv04": {
+          "code": "nv04",
+          "name": "NVIDIA - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Hyderabad, India"
+        },
+        "nv05": {
+          "code": "nv05",
+          "name": "NVIDIA - Surat",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Surat",
+          "employees": 1300,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Surat, India"
+        },
+        "nv06": {
+          "code": "nv06",
+          "name": "NVIDIA - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 1000,
+          "sector": "Technology",
+          "subsector": "AI Processors",
+          "description": "NVIDIA branch in Delhi, India"
+        }
+      }
+    },
+    "Pfizer": {
+      "code": "pf",
+      "sector": "Healthcare",
+      "subsector": "Pharmaceuticals",
+      "description": "Global pharmaceutical company",
+      "branches": {
+        "pf01": {
+          "code": "pf01",
+          "name": "Pfizer - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 4500,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Salem, India"
+        },
+        "pf02": {
+          "code": "pf02",
+          "name": "Pfizer - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 18000,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Belgaum, India"
+        },
+        "pf03": {
+          "code": "pf03",
+          "name": "Pfizer - Nagpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Nagpur",
+          "employees": 2800,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Nagpur, India"
+        },
+        "pf04": {
+          "code": "pf04",
+          "name": "Pfizer - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 1800,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Warangal, India"
+        },
+        "pf05": {
+          "code": "pf05",
+          "name": "Pfizer - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 1100,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Vadodara, India"
+        },
+        "pf06": {
+          "code": "pf06",
+          "name": "Pfizer - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 900,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Pfizer branch in Noida, India"
+        }
+      }
+    },
+    "Johnson & Johnson": {
+      "code": "jj",
+      "sector": "Healthcare",
+      "subsector": "Pharmaceuticals & Medical Devices",
+      "description": "Diversified healthcare company",
+      "branches": {
+        "jj01": {
+          "code": "jj01",
+          "name": "Johnson & Johnson - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 5000,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Salem, India"
+        },
+        "jj02": {
+          "code": "jj02",
+          "name": "Johnson & Johnson - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 20000,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Belgaum, India"
+        },
+        "jj03": {
+          "code": "jj03",
+          "name": "Johnson & Johnson - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 3200,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Mumbai, India"
+        },
+        "jj04": {
+          "code": "jj04",
+          "name": "Johnson & Johnson - Secunderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Secunderabad",
+          "employees": 2100,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Secunderabad, India"
+        },
+        "jj05": {
+          "code": "jj05",
+          "name": "Johnson & Johnson - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1300,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Rajkot, India"
+        },
+        "jj06": {
+          "code": "jj06",
+          "name": "Johnson & Johnson - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 1000,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals & Medical Devices",
+          "description": "Johnson & Johnson branch in Lucknow, India"
+        }
+      }
+    },
+    "Roche": {
+      "code": "rh",
+      "sector": "Healthcare",
+      "subsector": "Pharmaceuticals",
+      "description": "Swiss pharmaceutical and diagnostics company",
+      "branches": {
+        "rh01": {
+          "code": "rh01",
+          "name": "Roche - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 4200,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Madurai, India"
+        },
+        "rh02": {
+          "code": "rh02",
+          "name": "Roche - Bangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Bangalore",
+          "employees": 16800,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Bangalore, India"
+        },
+        "rh03": {
+          "code": "rh03",
+          "name": "Roche - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 2400,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Mumbai, India"
+        },
+        "rh04": {
+          "code": "rh04",
+          "name": "Roche - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 1600,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Warangal, India"
+        },
+        "rh05": {
+          "code": "rh05",
+          "name": "Roche - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 1000,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Vadodara, India"
+        },
+        "rh06": {
+          "code": "rh06",
+          "name": "Roche - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 800,
+          "sector": "Healthcare",
+          "subsector": "Pharmaceuticals",
+          "description": "Roche branch in Delhi, India"
+        }
+      }
+    },
+    "Unilever": {
+      "code": "ul",
+      "sector": "Consumer Goods",
+      "subsector": "Personal Care",
+      "description": "Global consumer goods company",
+      "branches": {
+        "ul01": {
+          "code": "ul01",
+          "name": "Unilever - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 4000,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Salem, India"
+        },
+        "ul02": {
+          "code": "ul02",
+          "name": "Unilever - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 16000,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Mysuru, India"
+        },
+        "ul03": {
+          "code": "ul03",
+          "name": "Unilever - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 2200,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Pune, India"
+        },
+        "ul04": {
+          "code": "ul04",
+          "name": "Unilever - Secunderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Secunderabad",
+          "employees": 1500,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Secunderabad, India"
+        },
+        "ul05": {
+          "code": "ul05",
+          "name": "Unilever - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1000,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Rajkot, India"
+        },
+        "ul06": {
+          "code": "ul06",
+          "name": "Unilever - Delhi",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Delhi",
+          "employees": 750,
+          "sector": "Consumer Goods",
+          "subsector": "Personal Care",
+          "description": "Unilever branch in Delhi, India"
+        }
+      }
+    },
+    "Nestlé": {
+      "code": "nl",
+      "sector": "Food & Beverage",
+      "subsector": "Food Manufacturing",
+      "description": "World's largest food and beverage company",
+      "branches": {
+        "nl01": {
+          "code": "nl01",
+          "name": "Nestlé - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 5500,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Salem, India"
+        },
+        "nl02": {
+          "code": "nl02",
+          "name": "Nestlé - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 22000,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Mangalore, India"
+        },
+        "nl03": {
+          "code": "nl03",
+          "name": "Nestlé - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 3500,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Mumbai, India"
+        },
+        "nl04": {
+          "code": "nl04",
+          "name": "Nestlé - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 2300,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Hyderabad, India"
+        },
+        "nl05": {
+          "code": "nl05",
+          "name": "Nestlé - Surat",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Surat",
+          "employees": 1400,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Surat, India"
+        },
+        "nl06": {
+          "code": "nl06",
+          "name": "Nestlé - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 1100,
+          "sector": "Food & Beverage",
+          "subsector": "Food Manufacturing",
+          "description": "Nestlé branch in Kanpur, India"
+        }
+      }
+    },
+    "Coca-Cola": {
+      "code": "ko",
+      "sector": "Food & Beverage",
+      "subsector": "Beverages",
+      "description": "Global beverage leader",
+      "branches": {
+        "ko01": {
+          "code": "ko01",
+          "name": "Coca-Cola - Coimbatore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Coimbatore",
+          "employees": 3000,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Coimbatore, India"
+        },
+        "ko02": {
+          "code": "ko02",
+          "name": "Coca-Cola - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 12000,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Belgaum, India"
+        },
+        "ko03": {
+          "code": "ko03",
+          "name": "Coca-Cola - Nagpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Nagpur",
+          "employees": 1800,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Nagpur, India"
+        },
+        "ko04": {
+          "code": "ko04",
+          "name": "Coca-Cola - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 1200,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Nizamabad, India"
+        },
+        "ko05": {
+          "code": "ko05",
+          "name": "Coca-Cola - Vadodara",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Vadodara",
+          "employees": 800,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Vadodara, India"
+        },
+        "ko06": {
+          "code": "ko06",
+          "name": "Coca-Cola - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 600,
+          "sector": "Food & Beverage",
+          "subsector": "Beverages",
+          "description": "Coca-Cola branch in Kanpur, India"
+        }
+      }
+    },
+    "Tata Consultancy Services": {
+      "code": "tcs",
+      "sector": "Technology",
+      "subsector": "IT Services",
+      "description": "Indian IT services and consulting leader",
+      "branches": {
+        "tcs01": {
+          "code": "tcs01",
+          "name": "Tata Consultancy Services - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 15000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Salem, India"
+        },
+        "tcs02": {
+          "code": "tcs02",
+          "name": "Tata Consultancy Services - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 60000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Mysuru, India"
+        },
+        "tcs03": {
+          "code": "tcs03",
+          "name": "Tata Consultancy Services - Nagpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Nagpur",
+          "employees": 9000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Nagpur, India"
+        },
+        "tcs04": {
+          "code": "tcs04",
+          "name": "Tata Consultancy Services - Secunderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Secunderabad",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Secunderabad, India"
+        },
+        "tcs05": {
+          "code": "tcs05",
+          "name": "Tata Consultancy Services - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 3200,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Ahmedabad, India"
+        },
+        "tcs06": {
+          "code": "tcs06",
+          "name": "Tata Consultancy Services - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Tata Consultancy Services branch in Noida, India"
+        }
+      }
+    },
+    "Infosys": {
+      "code": "infy",
+      "sector": "Technology",
+      "subsector": "IT Services",
+      "description": "Indian IT services and digital transformation company",
+      "branches": {
+        "infy01": {
+          "code": "infy01",
+          "name": "Infosys - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 12000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Madurai, India"
+        },
+        "infy02": {
+          "code": "infy02",
+          "name": "Infosys - Belgaum",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Belgaum",
+          "employees": 48000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Belgaum, India"
+        },
+        "infy03": {
+          "code": "infy03",
+          "name": "Infosys - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 7000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Mumbai, India"
+        },
+        "infy04": {
+          "code": "infy04",
+          "name": "Infosys - Secunderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Secunderabad",
+          "employees": 4200,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Secunderabad, India"
+        },
+        "infy05": {
+          "code": "infy05",
+          "name": "Infosys - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 2500,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Ahmedabad, India"
+        },
+        "infy06": {
+          "code": "infy06",
+          "name": "Infosys - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 1800,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Infosys branch in Lucknow, India"
+        }
+      }
+    },
+    "Wipro": {
+      "code": "wip",
+      "sector": "Technology",
+      "subsector": "IT Services",
+      "description": "Indian IT services company",
+      "branches": {
+        "wip01": {
+          "code": "wip01",
+          "name": "Wipro - Salem",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Salem",
+          "employees": 10000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Salem, India"
+        },
+        "wip02": {
+          "code": "wip02",
+          "name": "Wipro - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 40000,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Mysuru, India"
+        },
+        "wip03": {
+          "code": "wip03",
+          "name": "Wipro - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Pune, India"
+        },
+        "wip04": {
+          "code": "wip04",
+          "name": "Wipro - Hyderabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Hyderabad",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Hyderabad, India"
+        },
+        "wip05": {
+          "code": "wip05",
+          "name": "Wipro - Surat",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Surat",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Surat, India"
+        },
+        "wip06": {
+          "code": "wip06",
+          "name": "Wipro - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 1500,
+          "sector": "Technology",
+          "subsector": "IT Services",
+          "description": "Wipro branch in Noida, India"
+        }
+      }
+    },
+    "Alibaba": {
+      "code": "baba",
+      "sector": "Technology",
+      "subsector": "E-commerce",
+      "description": "Chinese e-commerce and cloud leader",
+      "branches": {
+        "baba01": {
+          "code": "baba01",
+          "name": "Alibaba - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 9000,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Madurai, India"
+        },
+        "baba02": {
+          "code": "baba02",
+          "name": "Alibaba - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 36000,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Mangalore, India"
+        },
+        "baba03": {
+          "code": "baba03",
+          "name": "Alibaba - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 5500,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Mumbai, India"
+        },
+        "baba04": {
+          "code": "baba04",
+          "name": "Alibaba - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 3500,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Nizamabad, India"
+        },
+        "baba05": {
+          "code": "baba05",
+          "name": "Alibaba - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 2100,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Rajkot, India"
+        },
+        "baba06": {
+          "code": "baba06",
+          "name": "Alibaba - Lucknow",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Lucknow",
+          "employees": 1500,
+          "sector": "Technology",
+          "subsector": "E-commerce",
+          "description": "Alibaba branch in Lucknow, India"
+        }
+      }
+    },
+    "Tencent": {
+      "code": "tce",
+      "sector": "Technology",
+      "subsector": "Internet Services",
+      "description": "Chinese technology and entertainment giant",
+      "branches": {
+        "tce01": {
+          "code": "tce01",
+          "name": "Tencent - Madurai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Madurai",
+          "employees": 8000,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Madurai, India"
+        },
+        "tce02": {
+          "code": "tce02",
+          "name": "Tencent - Mysuru",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mysuru",
+          "employees": 32000,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Mysuru, India"
+        },
+        "tce03": {
+          "code": "tce03",
+          "name": "Tencent - Pune",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Pune",
+          "employees": 4500,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Pune, India"
+        },
+        "tce04": {
+          "code": "tce04",
+          "name": "Tencent - Warangal",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Warangal",
+          "employees": 3000,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Warangal, India"
+        },
+        "tce05": {
+          "code": "tce05",
+          "name": "Tencent - Ahmedabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Ahmedabad",
+          "employees": 1800,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Ahmedabad, India"
+        },
+        "tce06": {
+          "code": "tce06",
+          "name": "Tencent - Noida",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Noida",
+          "employees": 1300,
+          "sector": "Technology",
+          "subsector": "Internet Services",
+          "description": "Tencent branch in Noida, India"
+        }
+      }
+    },
+    "Huawei": {
+      "code": "hw",
+      "sector": "Technology",
+      "subsector": "Telecom Equipment",
+      "description": "Chinese telecommunications equipment company",
+      "branches": {
+        "hw01": {
+          "code": "hw01",
+          "name": "Huawei - Chennai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "employees": 7000,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Chennai, India"
+        },
+        "hw02": {
+          "code": "hw02",
+          "name": "Huawei - Mangalore",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Karnataka",
+          "city": "Mangalore",
+          "employees": 28000,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Mangalore, India"
+        },
+        "hw03": {
+          "code": "hw03",
+          "name": "Huawei - Mumbai",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Maharashtra",
+          "city": "Mumbai",
+          "employees": 4000,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Mumbai, India"
+        },
+        "hw04": {
+          "code": "hw04",
+          "name": "Huawei - Nizamabad",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Telangana",
+          "city": "Nizamabad",
+          "employees": 2500,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Nizamabad, India"
+        },
+        "hw05": {
+          "code": "hw05",
+          "name": "Huawei - Rajkot",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Gujarat",
+          "city": "Rajkot",
+          "employees": 1500,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Rajkot, India"
+        },
+        "hw06": {
+          "code": "hw06",
+          "name": "Huawei - Kanpur",
+          "continent": "Asia",
+          "country": "India",
+          "state": "Uttar Pradesh",
+          "city": "Kanpur",
+          "employees": 1100,
+          "sector": "Technology",
+          "subsector": "Telecom Equipment",
+          "description": "Huawei branch in Kanpur, India"
+        }
+      }
+    }
+  },
+  "metadata": {
+    "generated": true,
+    "version": "1.0",
+    "total_companies": 29,
+    "total_countries": 21
+  }
+}
