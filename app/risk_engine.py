@@ -1,16 +1,3 @@
-"""
-Rule-based risk scoring engine (MVP).
-
-This is intentionally simple: weighted rules, not ML. Per the product
-roadmap, the goal is a working brain first — models get smarter in
-later phases.
-
-NOTE: SECTOR_RISK values below are illustrative starting weights, not
-derived from real market/volatility data. Replace with real data
-sources (e.g. sector volatility indices) before using this for actual
-decisions.
-"""
-
 from typing import Optional, List, Tuple
 
 # Illustrative sector risk weights (0-100, higher = riskier).

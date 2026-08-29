@@ -1,8 +1,3 @@
-"""
-SQLAlchemy ORM models. Postgres is now the single source of truth
-(MongoDB has been removed).
-"""
-
 import uuid
 from datetime import datetime
 
@@ -73,3 +68,23 @@ class SimulationResult(Base):
     n_samples = Column(Integer)
     results = Column(JSON)
     extra_metadata = Column(JSON)
+
+   
+class SeismicEvent(Base):
+    """
+    One row per USGS earthquake event. Upserted by app/seismic_ingest.py.
+    """
+
+    __tablename__ = "seismic_events"
+
+    id = Column(String, primary_key=True)
+    magnitude = Column(Float, nullable=False)
+    place = Column(String)
+    country_normalized = Column(String, index=True)
+    event_time = Column(DateTime, nullable=False, index=True)
+    depth_km = Column(Float)
+    latitude = Column(Float)
+    longitude = Column(Float)
+    tsunami_flag = Column(Integer, default=0)
+    url = Column(String)
+    ingested_at = Column(DateTime, default=datetime.utcnow)

@@ -1,10 +1,3 @@
-"""
-AVALYOS FastAPI backend (Postgres-backed, Meridian removed).
-
-Run (development):
-    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-"""
-
 import os
 import random
 import threading
@@ -21,6 +14,7 @@ from sqlalchemy.orm import Session
 from .database import get_db
 from . import models, schemas
 from .risk_engine import score_scenario
+from . import seismic_risk
 
 app = FastAPI(title="AVALYOS Backend", version="2.0")
 
@@ -232,6 +226,37 @@ def flood_risk(api_key: Optional[str] = Depends(get_api_key)):
     with open(FLOOD_RESULTS_PATH, "r") as f:
         return json.load(f)
 
+@app.get("/seismic-risk/{country}", response_model=schemas.CountrySeismicRiskOut)
+def seismic_risk_for_country(
+    country: str,
+    days: int = 90,
+    db: Session = Depends(get_db),
+    api_key: Optional[str] = Depends(get_api_key),
+):
+    result = seismic_risk.score_country_seismic_risk(db, country, days=days)
+    return schemas.CountrySeismicRiskOut(**result)
+
+
+@app.get("/seismic-risk", response_model=List[schemas.CountrySeismicRiskOut])
+def seismic_risk_overview(
+    days: int = 90,
+    min_events: int = 1,
+    db: Session = Depends(get_db),
+    api_key: Optional[str] = Depends(get_api_key),
+):
+    results = seismic_risk.score_all_countries(db, days=days, min_events=min_events)
+    return [schemas.CountrySeismicRiskOut(**r) for r in results]
+
+
+@app.get("/seismic-risk/branches/exposure", response_model=List[schemas.BranchSeismicExposureOut])
+def seismic_risk_branch_exposure(
+    days: int = 90,
+    db: Session = Depends(get_db),
+    api_key: Optional[str] = Depends(get_api_key),
+):
+    branches = db.query(models.Branch).all()
+    results = [seismic_risk.score_branch_exposure(db, b, days=days) for b in branches]
+    return [schemas.BranchSeismicExposureOut(**r) for r in results]
 
 if __name__ == "__main__":
     import uvicorn

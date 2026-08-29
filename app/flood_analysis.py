@@ -1,24 +1,3 @@
-"""
-TDA FLOOD DRIVER ANALYSIS — BATCH JOB
-======================================
-Runs the full topological data analysis pipeline and writes a single
-flood_analysis_results.json containing every number the frontend needs.
-
-This is meant to be run OFFLINE (not on every API request), since
-persistent homology + pairwise Wasserstein distances are too slow to
-compute live on each page load. The FastAPI /flood-risk endpoint just
-serves the JSON this script produces.
-
-Run:
-    python flood_analysis.py
-
-Scope note:
-    Steps 1-5 (rainfall-driven analysis) are India-only, because the
-    only rainfall dataset available is India district-level data.
-    Steps 6-7 (country flood-topology clusters + similarity) cover
-    ALL countries with flood records in EMDAT (~180 countries).
-"""
-
 import json
 import os
 import warnings

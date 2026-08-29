@@ -13,3 +13,5 @@ ripser
 persim
 pandas
 numpy
+httpx
+pycountry

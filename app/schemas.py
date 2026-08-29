@@ -1,7 +1,3 @@
-"""
-Pydantic schemas: shape data going in/out of the API.
-"""
-
 from typing import Optional, List, Dict
 from pydantic import BaseModel, ConfigDict
 
@@ -53,3 +49,27 @@ class AnalyzeResponse(BaseModel):
     risk_level: str
     reasons: List[str]
     suggestion: str
+
+class CountrySeismicRiskOut(BaseModel):
+    country: str
+    window_days: int
+    risk_score: float
+    risk_level: str
+    event_count: int
+    max_magnitude: Optional[float] = None
+    avg_magnitude: Optional[float] = None
+    reasons: List[str]
+
+
+class BranchSeismicExposureOut(BaseModel):
+    branch_code: str
+    branch_name: Optional[str] = None
+    company: Optional[str] = None
+    country: Optional[str] = None
+    window_days: Optional[int] = None
+    risk_score: Optional[float] = None
+    risk_level: str
+    event_count: Optional[int] = None
+    max_magnitude: Optional[float] = None
+    avg_magnitude: Optional[float] = None
+    reasons: List[str]
