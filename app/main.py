@@ -5,7 +5,7 @@ import time
 import json
 from collections import deque
 from typing import Optional, List
-
+from . import company_search
 
 from fastapi import FastAPI, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -109,6 +109,28 @@ def list_companies(db: Session = Depends(get_db), api_key: Optional[str] = Depen
     ]
 
 
+@app.get("/companies/search", summary="Search global companies by name (GLEIF)")
+def companies_search(
+    q: str,
+    limit: int = 20,
+    api_key: Optional[str] = Depends(get_api_key),
+):
+    """
+    Search global companies via GLEIF (2.5M+ legal entities, 230+ jurisdictions).
+    Free, keyless, CC0-licensed. Minimum query length: 3 characters.
+    """
+    if not q or len(q.strip()) < 3:
+        raise HTTPException(
+            status_code=400,
+            detail={"error": "Query must be at least 3 characters"},
+        )
+    if limit > 50:
+        limit = 50
+    if limit < 1:
+        limit = 1
+    return company_search.search_companies(q, limit=limit)
+
+
 @app.get("/companies/{name}", response_model=schemas.CompanyDetailOut)
 def get_company(name: str, db: Session = Depends(get_db), api_key: Optional[str] = Depends(get_api_key)):
     company = (
@@ -186,10 +208,10 @@ def analyze_scenario(
             .filter(models.Company.name.ilike(req.company))
             .first()
         )
-        if not company:
-            raise HTTPException(status_code=404, detail={"error": "Company not found"})
-        sector = sector or company.sector
-        employees = sum(b.employees or 0 for b in company.branches)
+        if company:
+            sector = sector or company.sector
+            employees = sum(b.employees or 0 for b in company.branches)
+        # If not found locally, we still proceed — the frontend will send sector directly
 
     if req.investment_amount <= 0:
         raise HTTPException(status_code=400, detail={"error": "investment_amount must be > 0"})
@@ -226,6 +248,7 @@ def flood_risk(api_key: Optional[str] = Depends(get_api_key)):
     with open(FLOOD_RESULTS_PATH, "r") as f:
         return json.load(f)
 
+
 @app.get("/seismic-risk/{country}", response_model=schemas.CountrySeismicRiskOut)
 def seismic_risk_for_country(
     country: str,
@@ -257,6 +280,7 @@ def seismic_risk_branch_exposure(
     branches = db.query(models.Branch).all()
     results = [seismic_risk.score_branch_exposure(db, b, days=days) for b in branches]
     return [schemas.BranchSeismicExposureOut(**r) for r in results]
+
 
 if __name__ == "__main__":
     import uvicorn
