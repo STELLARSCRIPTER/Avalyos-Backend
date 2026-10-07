@@ -15,6 +15,7 @@ from .database import get_db
 from . import models, schemas
 from .risk_engine import score_scenario
 from . import seismic_risk
+from . import flood_risk
 
 app = FastAPI(title="AVALYOS Backend", version="2.0")
 
@@ -200,9 +201,13 @@ def analyze_scenario(
 ):
     """Score a finance scenario: risk level + suggested action.
 
-    Combines two signals today:
-      - financial  (from risk_engine.score_scenario)
-      - seismic    (from seismic_risk.score_country_seismic_risk, if country is known)
+    Combines three signals:
+      - financial  (risk_engine.score_scenario)
+      - seismic    (seismic_risk.score_country_seismic_risk, if country is known)
+      - flood      (flood_risk.flood_risk_for_country, if country is known)
+
+    Weights redistribute proportionally when a signal is unavailable, so the
+    verdict is never artificially depressed by a missing signal.
     """
     sector = req.sector
     employees = None
@@ -216,14 +221,13 @@ def analyze_scenario(
         if company:
             sector = sector or company.sector
             employees = sum(b.employees or 0 for b in company.branches)
-        # If not found locally, we still proceed — the frontend will send sector directly
 
     if req.investment_amount <= 0:
         raise HTTPException(status_code=400, detail={"error": "investment_amount must be > 0"})
     if req.time_horizon_years <= 0:
         raise HTTPException(status_code=400, detail={"error": "time_horizon_years must be > 0"})
 
-    # --- Signal 1: Financial ---
+    # --- Signal 1: Financial (always available) ---
     financial = score_scenario(
         sector=sector,
         investment_amount=req.investment_amount,
@@ -232,7 +236,7 @@ def analyze_scenario(
     )
     financial_score = financial["risk_score"]
 
-    # --- Signal 2: Seismic (only if country is known) ---
+    # --- Signal 2: Seismic ---
     seismic_score: Optional[float] = None
     seismic_reason: Optional[str] = None
     seismic_available = False
@@ -256,17 +260,41 @@ def analyze_scenario(
                 )
             seismic_available = True
         except Exception:
-            # If lookup fails for any reason, proceed with financial-only
             pass
 
-    # --- Weighted aggregation ---
-    if seismic_available and seismic_score is not None:
-        W_FIN, W_SEIS = 0.65, 0.35
-        combined = financial_score * W_FIN + seismic_score * W_SEIS
-    else:
-        W_FIN, W_SEIS = 1.0, 0.0
-        combined = financial_score
+    # --- Signal 3: Flood ---
+    flood_score: Optional[float] = None
+    flood_reasons: List[str] = []
+    flood_available = False
 
+    if req.country:
+        try:
+            f = flood_risk.flood_risk_for_country(req.country)
+            if f.get("available") and f.get("risk_score") is not None:
+                flood_score = f["risk_score"]
+                flood_reasons = f.get("reasons", []) or []
+                flood_available = True
+        except Exception:
+            pass
+
+    # --- Weighted aggregation with proportional redistribution ---
+    base_weights = {"financial": 0.50, "seismic": 0.20, "flood": 0.30}
+    availability = {
+        "financial": True,
+        "seismic": seismic_available,
+        "flood": flood_available,
+    }
+    available_sum = sum(w for k, w in base_weights.items() if availability[k]) or 1.0
+    norm = {
+        k: (base_weights[k] / available_sum if availability[k] else 0.0)
+        for k in base_weights
+    }
+
+    combined = (
+        financial_score * norm["financial"]
+        + (seismic_score or 0.0) * norm["seismic"]
+        + (flood_score or 0.0) * norm["flood"]
+    )
     combined = round(combined, 1)
 
     if combined < 35:
@@ -276,14 +304,14 @@ def analyze_scenario(
     else:
         level = "High"
 
-    # --- Reasons: financial first, then seismic ---
+    # --- Reasons: financial, then seismic, then flood ---
     reasons: List[str] = list(financial["reasons"])
     if seismic_reason:
         reasons.append(seismic_reason)
+    reasons.extend(flood_reasons)
 
-        # --- Suggestion derived from the COMPOSITE level, not the financial engine's ---
+    # --- Suggestion derived from the COMPOSITE level ---
     from .risk_engine import _suggestion_for
-
     suggestion = _suggestion_for(level)
 
     if seismic_available and seismic_score is not None and seismic_score >= 35:
@@ -291,19 +319,30 @@ def analyze_scenario(
             " Seismic exposure is non-trivial — consider monitoring and contingency "
             "planning for assets in this region."
         )
+    if flood_available and flood_score is not None and flood_score >= 40:
+        suggestion += (
+            " Historical flood recurrence is significant in this country — "
+            "review physical asset placement and supply-chain contingencies."
+        )
 
     signals = [
         schemas.SignalContribution(
             signal="financial",
             score=financial_score,
-            weight=W_FIN,
+            weight=round(norm["financial"], 2),
             available=True,
         ),
         schemas.SignalContribution(
             signal="seismic",
             score=seismic_score,
-            weight=W_SEIS,
+            weight=round(norm["seismic"], 2),
             available=seismic_available,
+        ),
+        schemas.SignalContribution(
+            signal="flood",
+            score=flood_score,
+            weight=round(norm["flood"], 2),
+            available=flood_available,
         ),
     ]
 
@@ -317,7 +356,7 @@ def analyze_scenario(
 
 
 @app.get("/flood-risk", summary="Pre-computed global flood TDA risk analysis")
-def flood_risk(api_key: Optional[str] = Depends(get_api_key)):
+def flood_risk_endpoint(api_key: Optional[str] = Depends(get_api_key)):
     """
     Serves the pre-computed results of the flood TDA batch analysis
     (app/flood_analysis.py). This does NOT run the analysis live —
