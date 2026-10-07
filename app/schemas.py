@@ -37,9 +37,17 @@ class SampleManyOut(BaseModel):
     distribution: Dict[str, int]
 
 
+class SignalContribution(BaseModel):
+    signal: str
+    score: Optional[float] = None
+    weight: float
+    available: bool
+
+
 class AnalyzeRequest(BaseModel):
     company: Optional[str] = None
     sector: Optional[str] = None
+    country: Optional[str] = None
     investment_amount: float
     time_horizon_years: float
 
@@ -49,6 +57,8 @@ class AnalyzeResponse(BaseModel):
     risk_level: str
     reasons: List[str]
     suggestion: str
+    signals: List[SignalContribution] = []
+
 
 class CountrySeismicRiskOut(BaseModel):
     country: str

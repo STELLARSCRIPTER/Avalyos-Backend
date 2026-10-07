@@ -1,0 +1,1 @@
+ALTER USER avalyos WITH PASSWORD 'avalyos123';

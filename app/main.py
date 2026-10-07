@@ -198,7 +198,12 @@ def analyze_scenario(
     db: Session = Depends(get_db),
     api_key: Optional[str] = Depends(get_api_key),
 ):
-    """Score a finance scenario: risk level + suggested action."""
+    """Score a finance scenario: risk level + suggested action.
+
+    Combines two signals today:
+      - financial  (from risk_engine.score_scenario)
+      - seismic    (from seismic_risk.score_country_seismic_risk, if country is known)
+    """
     sector = req.sector
     employees = None
 
@@ -218,13 +223,97 @@ def analyze_scenario(
     if req.time_horizon_years <= 0:
         raise HTTPException(status_code=400, detail={"error": "time_horizon_years must be > 0"})
 
-    result = score_scenario(
+    # --- Signal 1: Financial ---
+    financial = score_scenario(
         sector=sector,
         investment_amount=req.investment_amount,
         time_horizon_years=req.time_horizon_years,
         employees=employees,
     )
-    return schemas.AnalyzeResponse(**result)
+    financial_score = financial["risk_score"]
+
+    # --- Signal 2: Seismic (only if country is known) ---
+    seismic_score: Optional[float] = None
+    seismic_reason: Optional[str] = None
+    seismic_available = False
+
+    if req.country:
+        try:
+            s = seismic_risk.score_country_seismic_risk(db, req.country, days=180)
+            event_count = s.get("event_count", 0)
+            if event_count > 0:
+                seismic_score = s.get("risk_score")
+                seismic_level = s.get("risk_level")
+                seismic_reason = (
+                    f"Seismic activity in {req.country}: {seismic_level} "
+                    f"({event_count} event(s), max magnitude "
+                    f"{s.get('max_magnitude') or '—'}) in last 180 days."
+                )
+            else:
+                seismic_score = 0.0
+                seismic_reason = (
+                    f"No seismic events recorded in {req.country} in the last 180 days."
+                )
+            seismic_available = True
+        except Exception:
+            # If lookup fails for any reason, proceed with financial-only
+            pass
+
+    # --- Weighted aggregation ---
+    if seismic_available and seismic_score is not None:
+        W_FIN, W_SEIS = 0.65, 0.35
+        combined = financial_score * W_FIN + seismic_score * W_SEIS
+    else:
+        W_FIN, W_SEIS = 1.0, 0.0
+        combined = financial_score
+
+    combined = round(combined, 1)
+
+    if combined < 35:
+        level = "Low"
+    elif combined < 65:
+        level = "Medium"
+    else:
+        level = "High"
+
+    # --- Reasons: financial first, then seismic ---
+    reasons: List[str] = list(financial["reasons"])
+    if seismic_reason:
+        reasons.append(seismic_reason)
+
+        # --- Suggestion derived from the COMPOSITE level, not the financial engine's ---
+    from .risk_engine import _suggestion_for
+
+    suggestion = _suggestion_for(level)
+
+    if seismic_available and seismic_score is not None and seismic_score >= 35:
+        suggestion += (
+            " Seismic exposure is non-trivial — consider monitoring and contingency "
+            "planning for assets in this region."
+        )
+
+    signals = [
+        schemas.SignalContribution(
+            signal="financial",
+            score=financial_score,
+            weight=W_FIN,
+            available=True,
+        ),
+        schemas.SignalContribution(
+            signal="seismic",
+            score=seismic_score,
+            weight=W_SEIS,
+            available=seismic_available,
+        ),
+    ]
+
+    return schemas.AnalyzeResponse(
+        risk_score=combined,
+        risk_level=level,
+        reasons=reasons,
+        suggestion=suggestion,
+        signals=signals,
+    )
 
 
 @app.get("/flood-risk", summary="Pre-computed global flood TDA risk analysis")
