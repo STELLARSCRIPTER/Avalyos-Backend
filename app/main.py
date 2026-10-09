@@ -6,6 +6,7 @@ import json
 from collections import deque
 from typing import Optional, List
 from . import company_search
+from . import decision
 
 from fastapi import FastAPI, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,9 +14,6 @@ from sqlalchemy.orm import Session
 
 from .database import get_db
 from . import models, schemas
-from .risk_engine import score_scenario
-from . import seismic_risk
-from . import flood_risk
 
 app = FastAPI(title="AVALYOS Backend", version="2.0")
 
@@ -132,6 +130,39 @@ def companies_search(
     return company_search.search_companies(q, limit=limit)
 
 
+@app.get("/regions", response_model=List[schemas.RegionOut], summary="List all ISO 3166-1 countries")
+def list_regions(api_key: Optional[str] = Depends(get_api_key)):
+    """
+    Full country list from pycountry. Cached at module load — this
+    endpoint is fast and stable.
+
+    flag_url points at flagcdn.com (free, no key). Renders on all
+    platforms including Windows, unlike emoji flags.
+    """
+    return _REGIONS
+
+
+# Cached at import time; pycountry's country list doesn't change at runtime.
+import pycountry as _pycountry  # noqa: E402
+
+
+def _build_regions() -> List[dict]:
+    out = []
+    for c in sorted(_pycountry.countries, key=lambda x: x.name):
+        iso = getattr(c, "alpha_2", None)
+        if not iso:
+            continue
+        out.append({
+            "iso_code": iso,
+            "name": c.name,
+            "flag_url": f"https://flagcdn.com/w40/{iso.lower()}.png",
+        })
+    return out
+
+
+_REGIONS = _build_regions()
+
+
 @app.get("/companies/{name}", response_model=schemas.CompanyDetailOut)
 def get_company(name: str, db: Session = Depends(get_db), api_key: Optional[str] = Depends(get_api_key)):
     company = (
@@ -199,159 +230,103 @@ def analyze_scenario(
     db: Session = Depends(get_db),
     api_key: Optional[str] = Depends(get_api_key),
 ):
-    """Score a finance scenario: risk level + suggested action.
-
-    Combines three signals:
-      - financial  (risk_engine.score_scenario)
-      - seismic    (seismic_risk.score_country_seismic_risk, if country is known)
-      - flood      (flood_risk.flood_risk_for_country, if country is known)
-
-    Weights redistribute proportionally when a signal is unavailable, so the
-    verdict is never artificially depressed by a missing signal.
-    """
-    sector = req.sector
-    employees = None
-
-    if req.company:
-        company = (
-            db.query(models.Company)
-            .filter(models.Company.name.ilike(req.company))
-            .first()
-        )
-        if company:
-            sector = sector or company.sector
-            employees = sum(b.employees or 0 for b in company.branches)
-
+    """Score a single scenario. Core logic lives in app/decision.py."""
     if req.investment_amount <= 0:
         raise HTTPException(status_code=400, detail={"error": "investment_amount must be > 0"})
     if req.time_horizon_years <= 0:
         raise HTTPException(status_code=400, detail={"error": "time_horizon_years must be > 0"})
 
-    # --- Signal 1: Financial (always available) ---
-    financial = score_scenario(
-        sector=sector,
-        investment_amount=req.investment_amount,
-        time_horizon_years=req.time_horizon_years,
-        employees=employees,
+    result = decision.analyze_one(
+        {
+            "company": req.company,
+            "sector": req.sector,
+            "country": req.country,
+            "investment_amount": req.investment_amount,
+            "time_horizon_years": req.time_horizon_years,
+        },
+        db,
     )
-    financial_score = financial["risk_score"]
+    return schemas.AnalyzeResponse(**result)
 
-    # --- Signal 2: Seismic ---
-    seismic_score: Optional[float] = None
-    seismic_reason: Optional[str] = None
-    seismic_available = False
 
-    if req.country:
-        try:
-            s = seismic_risk.score_country_seismic_risk(db, req.country, days=180)
-            event_count = s.get("event_count", 0)
-            if event_count > 0:
-                seismic_score = s.get("risk_score")
-                seismic_level = s.get("risk_level")
-                seismic_reason = (
-                    f"Seismic activity in {req.country}: {seismic_level} "
-                    f"({event_count} event(s), max magnitude "
-                    f"{s.get('max_magnitude') or '—'}) in last 180 days."
-                )
-            else:
-                seismic_score = 0.0
-                seismic_reason = (
-                    f"No seismic events recorded in {req.country} in the last 180 days."
-                )
-            seismic_available = True
-        except Exception:
-            pass
+@app.post("/compare", response_model=schemas.CompareResponse)
+def compare_scenarios(
+    req: schemas.CompareRequest,
+    db: Session = Depends(get_db),
+    api_key: Optional[str] = Depends(get_api_key),
+):
+    """
+    Run the same scenario against two regions and return both verdicts
+    plus a summary of the divergence.
+    """
+    if req.investment_amount <= 0:
+        raise HTTPException(status_code=400, detail={"error": "investment_amount must be > 0"})
+    if req.time_horizon_years <= 0:
+        raise HTTPException(status_code=400, detail={"error": "time_horizon_years must be > 0"})
+    if not req.region_a or not req.region_b:
+        raise HTTPException(status_code=400, detail={"error": "region_a and region_b are required"})
 
-    # --- Signal 3: Flood ---
-    flood_score: Optional[float] = None
-    flood_reasons: List[str] = []
-    flood_available = False
-
-    if req.country:
-        try:
-            f = flood_risk.flood_risk_for_country(req.country)
-            if f.get("available") and f.get("risk_score") is not None:
-                flood_score = f["risk_score"]
-                flood_reasons = f.get("reasons", []) or []
-                flood_available = True
-        except Exception:
-            pass
-
-    # --- Weighted aggregation with proportional redistribution ---
-    base_weights = {"financial": 0.50, "seismic": 0.20, "flood": 0.30}
-    availability = {
-        "financial": True,
-        "seismic": seismic_available,
-        "flood": flood_available,
-    }
-    available_sum = sum(w for k, w in base_weights.items() if availability[k]) or 1.0
-    norm = {
-        k: (base_weights[k] / available_sum if availability[k] else 0.0)
-        for k in base_weights
+    base = {
+        "company": req.company,
+        "sector": req.sector,
+        "investment_amount": req.investment_amount,
+        "time_horizon_years": req.time_horizon_years,
     }
 
-    combined = (
-        financial_score * norm["financial"]
-        + (seismic_score or 0.0) * norm["seismic"]
-        + (flood_score or 0.0) * norm["flood"]
-    )
-    combined = round(combined, 1)
+    result_a = decision.analyze_one({**base, "country": req.region_a}, db)
+    result_b = decision.analyze_one({**base, "country": req.region_b}, db)
 
-    if combined < 35:
-        level = "Low"
-    elif combined < 65:
-        level = "Medium"
+    score_a = result_a["risk_score"]
+    score_b = result_b["risk_score"]
+    diff = round(abs(score_a - score_b), 1)
+
+    if score_a > score_b:
+        riskier = "a"
+    elif score_b > score_a:
+        riskier = "b"
     else:
-        level = "High"
+        riskier = "equal"
 
-    # --- Reasons: financial, then seismic, then flood ---
-    reasons: List[str] = list(financial["reasons"])
-    if seismic_reason:
-        reasons.append(seismic_reason)
-    reasons.extend(flood_reasons)
+    level_change = f"{result_a['risk_level'].upper()} → {result_b['risk_level'].upper()}"
 
-    # --- Suggestion derived from the COMPOSITE level ---
-    from .risk_engine import _suggestion_for
-    suggestion = _suggestion_for(level)
+    sigs_a = {s["signal"]: s["score"] or 0.0 for s in result_a["signals"]}
+    sigs_b = {s["signal"]: s["score"] or 0.0 for s in result_b["signals"]}
+    deltas = {
+        k: abs(sigs_a.get(k, 0.0) - sigs_b.get(k, 0.0))
+        for k in set(sigs_a) | set(sigs_b)
+    }
+    top_signal = max(deltas, key=deltas.get) if deltas else "financial"
+    top_delta = round(deltas.get(top_signal, 0.0), 1)
 
-    if seismic_available and seismic_score is not None and seismic_score >= 35:
-        suggestion += (
-            " Seismic exposure is non-trivial — consider monitoring and contingency "
-            "planning for assets in this region."
+    if riskier == "a":
+        summary_line = (
+            f"{req.region_a} is riskier by {diff} points — "
+            f"divergence driven mainly by {top_signal}."
         )
-    if flood_available and flood_score is not None and flood_score >= 40:
-        suggestion += (
-            " Historical flood recurrence is significant in this country — "
-            "review physical asset placement and supply-chain contingencies."
+    elif riskier == "b":
+        summary_line = (
+            f"{req.region_b} is riskier by {diff} points — "
+            f"divergence driven mainly by {top_signal}."
         )
+    else:
+        summary_line = "Both regions score identically for this scenario."
 
-    signals = [
-        schemas.SignalContribution(
-            signal="financial",
-            score=financial_score,
-            weight=round(norm["financial"], 2),
-            available=True,
-        ),
-        schemas.SignalContribution(
-            signal="seismic",
-            score=seismic_score,
-            weight=round(norm["seismic"], 2),
-            available=seismic_available,
-        ),
-        schemas.SignalContribution(
-            signal="flood",
-            score=flood_score,
-            weight=round(norm["flood"], 2),
-            available=flood_available,
-        ),
-    ]
+    summary = schemas.ComparisonSummary(
+        riskier_region=riskier,
+        score_difference=diff,
+        level_change=level_change,
+        top_diverging_signal=top_signal,
+        diverging_signal_delta=top_delta,
+        summary_line=summary_line,
+    )
 
-    return schemas.AnalyzeResponse(
-        risk_score=combined,
-        risk_level=level,
-        reasons=reasons,
-        suggestion=suggestion,
-        signals=signals,
+    return schemas.CompareResponse(
+        company=req.company,
+        region_a=req.region_a,
+        region_b=req.region_b,
+        result_a=schemas.AnalyzeResponse(**result_a),
+        result_b=schemas.AnalyzeResponse(**result_b),
+        summary=summary,
     )
 
 
@@ -384,6 +359,7 @@ def seismic_risk_for_country(
     db: Session = Depends(get_db),
     api_key: Optional[str] = Depends(get_api_key),
 ):
+    from . import seismic_risk
     result = seismic_risk.score_country_seismic_risk(db, country, days=days)
     return schemas.CountrySeismicRiskOut(**result)
 
@@ -395,6 +371,7 @@ def seismic_risk_overview(
     db: Session = Depends(get_db),
     api_key: Optional[str] = Depends(get_api_key),
 ):
+    from . import seismic_risk
     results = seismic_risk.score_all_countries(db, days=days, min_events=min_events)
     return [schemas.CountrySeismicRiskOut(**r) for r in results]
 
@@ -405,6 +382,7 @@ def seismic_risk_branch_exposure(
     db: Session = Depends(get_db),
     api_key: Optional[str] = Depends(get_api_key),
 ):
+    from . import seismic_risk
     branches = db.query(models.Branch).all()
     results = [seismic_risk.score_branch_exposure(db, b, days=days) for b in branches]
     return [schemas.BranchSeismicExposureOut(**r) for r in results]

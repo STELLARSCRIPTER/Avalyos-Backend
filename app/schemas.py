@@ -83,3 +83,44 @@ class BranchSeismicExposureOut(BaseModel):
     max_magnitude: Optional[float] = None
     avg_magnitude: Optional[float] = None
     reasons: List[str]
+
+
+    # --------------------------------------------------------------------
+# Region lookup (for /regions endpoint and frontend dropdowns)
+# --------------------------------------------------------------------
+class RegionOut(BaseModel):
+    iso_code: str
+    name: str
+    flag_url: Optional[str] = None
+
+
+# --------------------------------------------------------------------
+# Compare mode: two scenarios, one company, different regions
+# --------------------------------------------------------------------
+class CompareRequest(BaseModel):
+    company: Optional[str] = None
+    sector: Optional[str] = None
+    investment_amount: float
+    time_horizon_years: float
+    region_a: str  # ISO-2
+    region_b: str  # ISO-2
+
+
+class ComparisonSummary(BaseModel):
+    riskier_region: str          # "a" | "b" | "equal"
+    score_difference: float      # |score_a - score_b|, rounded
+    level_change: str            # e.g. "MEDIUM → LOW", "LOW → LOW"
+    top_diverging_signal: str    # "financial" | "seismic" | "flood"
+    diverging_signal_delta: float
+    summary_line: str            # one-line human-readable suggestion
+
+
+class CompareResponse(BaseModel):
+    company: Optional[str]
+    region_a: str
+    region_b: str
+    result_a: AnalyzeResponse
+    result_b: AnalyzeResponse
+    summary: ComparisonSummary
+
+    
