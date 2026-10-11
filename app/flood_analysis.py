@@ -1,5 +1,7 @@
 import json
 import os
+import sys
+import argparse
 import warnings
 import numpy as np
 import pandas as pd
@@ -24,7 +26,12 @@ BOB_ACTIVE   = {2007,2008,2009,2013,2019,2020,2021,2023}
 
 RAINFALL_CSV = os.path.join(DATA_DIR, 'district_wise_rainfall_normal.csv')
 EMDAT_CSV = os.path.join(DATA_DIR, 'public_emdat_project.csv')
-OUTPUT_JSON = os.path.join(DATA_DIR, 'flood_analysis_results.json')
+
+# Output filename depends on whether a year cutoff is active.
+#   - Default (no cutoff): flood_analysis_results.json       (full-history)
+#   - With --max-year:     flood_analysis_results_historical.json (strict backtest)
+DEFAULT_OUTPUT = os.path.join(DATA_DIR, 'flood_analysis_results.json')
+HISTORICAL_OUTPUT = os.path.join(DATA_DIR, 'flood_analysis_results_historical.json')
 
 
 def to_native(obj):
@@ -45,6 +52,18 @@ def to_native(obj):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Flood TDA batch analysis")
+    parser.add_argument(
+        "--max-year", type=int, default=None,
+        help="If set, filter EM-DAT to events with Start Year <= this value. "
+             "Output goes to flood_analysis_results_historical.json instead "
+             "of flood_analysis_results.json."
+    )
+    args = parser.parse_args()
+
+    max_year = args.max_year
+    output_path = HISTORICAL_OUTPUT if max_year is not None else DEFAULT_OUTPUT
+
     results = {}
 
     # ── LOAD & CLEAN ─────────────────────────────────────────────────
@@ -64,16 +83,22 @@ def main():
     emdat['Month'] = pd.to_numeric(emdat['Start Month'], errors='coerce')
     emdat['Damage_M'] = emdat.get("Total Damage, Adjusted ('000 US$)", pd.Series(dtype=float)) / 1000
 
+    # --- Apply year cutoff if requested ---
+    if max_year is not None:
+        before = len(emdat)
+        emdat = emdat[emdat['Year'] <= max_year].copy()
+        print(f"Year cutoff active: max_year={max_year}. "
+              f"Filtered EM-DAT from {before} to {len(emdat)} rows.")
+
     india_floods = emdat[(emdat['Country'] == 'India') & (emdat['Disaster Type'] == 'Flood')].copy()
-    # Steps 6-7: ALL countries with flood records, not a fixed list
     global_floods = emdat[emdat['Disaster Type'] == 'Flood'].copy()
 
     print(f"India flood records: {len(india_floods)}")
     print(f"Global flood records: {len(global_floods)} across {global_floods['Country'].nunique()} countries")
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 1 — MONTH-FLOOD CORRELATION (INDIA)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 1: month-flood correlation...")
     monthly_events = india_floods.groupby('Month').size().reindex(range(1, 13), fill_value=0)
     monthly_deaths = india_floods.groupby('Month')['Total Deaths'].sum().reindex(range(1, 13), fill_value=0)
@@ -103,9 +128,9 @@ def main():
         'top_flood_months': top_months,
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 2 — TDA ON DISTRICT RAINFALL POINT CLOUD (INDIA)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 2: TDA on district rainfall space...")
     X_rain = rain[MONTHS].dropna().values
     X_scaled = StandardScaler().fit_transform(X_rain)
@@ -136,9 +161,9 @@ def main():
         'h1_loop_count': int(len(h1_finite)),
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 3 — MONSOON DRIVER FINGERPRINTING (INDIA)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 3: driver fingerprinting...")
     annual = india_floods.groupby('Year').agg(
         Events=('DisNo.', 'count'),
@@ -203,9 +228,9 @@ def main():
         'year_points': year_points,
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 4 — TDA ON YEAR-SPACE (INDIA)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 4: TDA on year-space...")
     diagrams_yr = ripser.ripser(annual_scaled, maxdim=1)['dgms']
     h0_yr = diagrams_yr[0]
@@ -224,9 +249,9 @@ def main():
         'h1_loop_count': int(len(h1_yr_finite)) if len(h1_yr) else 0,
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 5 — ALL-MONTH DRIVER HEATMAP (INDIA)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 5: month x driver heatmap...")
     nat_by_month = rain[MONTHS].mean()
     emdat_by_month = india_floods.groupby('Month').agg(
@@ -235,18 +260,8 @@ def main():
         Damage=('Damage_M', 'sum')
     ).reindex(range(1, 13), fill_value=0)
 
-    shift_corr = {}
     ev_vec = emdat_by_month['Events'].values
     rain_vec = nat_by_month.values
-    for lag, shift in [('lag0', 0), ('lag1', -1), ('lag2', -2)]:
-        shift_corr[lag] = pearsonr(rain_vec, np.roll(ev_vec, shift))[0]
-
-    shift_series = {
-        'lag0': [pearsonr(rain_vec, ev_vec)[0]] * 1,
-    }
-    # Build the per-month lag lines the frontend needs (same value repeated
-    # per month row in the original script's DataFrame construction, since
-    # the source script computes one scalar per lag across all 12 months).
     lag0_val = pearsonr(rain_vec, ev_vec)[0]
     lag1_val = pearsonr(rain_vec, np.roll(ev_vec, -1))[0]
     lag2_val = pearsonr(rain_vec, np.roll(ev_vec, -2))[0]
@@ -271,9 +286,9 @@ def main():
         },
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 6 — GLOBAL COUNTRY-LEVEL TDA FINGERPRINTS (ALL COUNTRIES)
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 6: global country topology...")
     country_annual = global_floods.groupby(['Country', 'Year']).agg(
         Events=('DisNo.', 'count'),
@@ -351,9 +366,9 @@ def main():
         'country_points': country_points,
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # STEP 7 — WASSERSTEIN DISTANCE BETWEEN ALL COUNTRIES
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     print("Step 7: pairwise Wasserstein distances (this is the slow part)...")
     country_diagrams = {}
     for country, grp in country_annual.groupby('Country'):
@@ -391,9 +406,9 @@ def main():
         ],
     }
 
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     # SUMMARY
-    # ══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════════════
     results['summary'] = {
         'top_flood_months_india': top_months,
         'driver_ratios': {k: v['ratio'] for k, v in driver_impact.items()},
@@ -409,10 +424,16 @@ def main():
         } if pairs_sorted else None,
     }
 
-    with open(OUTPUT_JSON, 'w') as f:
+    results['meta'] = {
+        'max_year': max_year,
+        'filter_active': max_year is not None,
+        'output_path': os.path.basename(output_path),
+    }
+
+    with open(output_path, 'w') as f:
         json.dump(to_native(results), f, indent=2)
 
-    print(f"\nDone. Wrote {OUTPUT_JSON}")
+    print(f"\nDone. Wrote {output_path}")
 
 
 if __name__ == '__main__':

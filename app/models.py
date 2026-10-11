@@ -81,6 +81,7 @@ class SeismicEvent(Base):
     magnitude = Column(Float, nullable=False)
     place = Column(String)
     country_normalized = Column(String, index=True)
+    country_iso = Column(String(2), index=True)          # ISO 3166-1 alpha-2, e.g. "IN"
     event_time = Column(DateTime, nullable=False, index=True)
     depth_km = Column(Float)
     latitude = Column(Float)
