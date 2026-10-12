@@ -1,0 +1,976 @@
+{
+  "metrics": {
+    "n_countries": 160,
+    "n_with_event_2019_2023": 150,
+    "n_without_event_2019_2023": 10,
+    "train_window": "2014-2018",
+    "test_window": "2019-2023",
+    "pearson_r": 0.4842,
+    "pearson_p": 0.0,
+    "auc": 0.894,
+    "mean_score_with_event": 63.88,
+    "mean_score_without_event": 31.12
+  },
+  "countries": [
+    {
+      "country_iso": "GR",
+      "score": 90.0,
+      "event_count": 1230,
+      "has_event": 1
+    },
+    {
+      "country_iso": "JP",
+      "score": 100.0,
+      "event_count": 3898,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ID",
+      "score": 100.0,
+      "event_count": 8476,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IR",
+      "score": 77.35,
+      "event_count": 889,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TO",
+      "score": 97.85,
+      "event_count": 2891,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PH",
+      "score": 100.0,
+      "event_count": 4324,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PG",
+      "score": 100.0,
+      "event_count": 3179,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PK",
+      "score": 77.35,
+      "event_count": 202,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CL",
+      "score": 100.0,
+      "event_count": 2733,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SB",
+      "score": 100.0,
+      "event_count": 1070,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MM",
+      "score": 90.0,
+      "event_count": 285,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CN",
+      "score": 90.0,
+      "event_count": 1058,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PE",
+      "score": 100.0,
+      "event_count": 1163,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CR",
+      "score": 86.43,
+      "event_count": 144,
+      "has_event": 1
+    },
+    {
+      "country_iso": "FJ",
+      "score": 100.0,
+      "event_count": 1279,
+      "has_event": 1
+    },
+    {
+      "country_iso": "US",
+      "score": 100.0,
+      "event_count": 2635,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MP",
+      "score": 100.0,
+      "event_count": 1084,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SV",
+      "score": 100.0,
+      "event_count": 336,
+      "has_event": 1
+    },
+    {
+      "country_iso": "WS",
+      "score": 67.81,
+      "event_count": 17,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NZ",
+      "score": 100.0,
+      "event_count": 1647,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TW",
+      "score": 84.37,
+      "event_count": 584,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CO",
+      "score": 80.37,
+      "event_count": 492,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AR",
+      "score": 90.67,
+      "event_count": 1290,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MX",
+      "score": 100.0,
+      "event_count": 1288,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SH",
+      "score": 62.54,
+      "event_count": 72,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TZ",
+      "score": 69.64,
+      "event_count": 105,
+      "has_event": 1
+    },
+    {
+      "country_iso": "VU",
+      "score": 100.0,
+      "event_count": 1942,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IN",
+      "score": 85.67,
+      "event_count": 685,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AS",
+      "score": 45.21,
+      "event_count": 5,
+      "has_event": 1
+    },
+    {
+      "country_iso": "WF",
+      "score": 95.67,
+      "event_count": 235,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BO",
+      "score": 87.85,
+      "event_count": 232,
+      "has_event": 1
+    },
+    {
+      "country_iso": "RU",
+      "score": 100.0,
+      "event_count": 2020,
+      "has_event": 1
+    },
+    {
+      "country_iso": "RS",
+      "score": 35.04,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NI",
+      "score": 88.53,
+      "event_count": 366,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CG",
+      "score": 25.0,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "GT",
+      "score": 100.0,
+      "event_count": 379,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KG",
+      "score": 79.37,
+      "event_count": 77,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AF",
+      "score": 90.0,
+      "event_count": 856,
+      "has_event": 1
+    },
+    {
+      "country_iso": "FM",
+      "score": 89.37,
+      "event_count": 137,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GU",
+      "score": 90.67,
+      "event_count": 679,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NC",
+      "score": 100.0,
+      "event_count": 328,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SA",
+      "score": 51.53,
+      "event_count": 18,
+      "has_event": 1
+    },
+    {
+      "country_iso": "RO",
+      "score": 64.26,
+      "event_count": 47,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IT",
+      "score": 83.53,
+      "event_count": 112,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PA",
+      "score": 93.53,
+      "event_count": 207,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AL",
+      "score": 56.03,
+      "event_count": 135,
+      "has_event": 1
+    },
+    {
+      "country_iso": "EC",
+      "score": 100.0,
+      "event_count": 258,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TJ",
+      "score": 90.0,
+      "event_count": 427,
+      "has_event": 1
+    },
+    {
+      "country_iso": "VE",
+      "score": 95.0,
+      "event_count": 107,
+      "has_event": 1
+    },
+    {
+      "country_iso": "HU",
+      "score": 22.61,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "DO",
+      "score": 77.81,
+      "event_count": 131,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ER",
+      "score": 43.6,
+      "event_count": 24,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CA",
+      "score": 97.85,
+      "event_count": 139,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TM",
+      "score": 60.86,
+      "event_count": 38,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PR",
+      "score": 89.37,
+      "event_count": 183,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CU",
+      "score": 72.81,
+      "event_count": 17,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GP",
+      "score": 74.64,
+      "event_count": 35,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AZ",
+      "score": 62.54,
+      "event_count": 34,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AI",
+      "score": 63.99,
+      "event_count": 36,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MR",
+      "score": 46.86,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KM",
+      "score": 42.03,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "HN",
+      "score": 95.0,
+      "event_count": 58,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CV",
+      "score": 35.99,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "YE",
+      "score": 71.51,
+      "event_count": 63,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AU",
+      "score": 71.51,
+      "event_count": 94,
+      "has_event": 1
+    },
+    {
+      "country_iso": "DZ",
+      "score": 62.54,
+      "event_count": 37,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MU",
+      "score": 56.03,
+      "event_count": 40,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SJ",
+      "score": 90.67,
+      "event_count": 106,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GB",
+      "score": 30.75,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BB",
+      "score": 91.43,
+      "event_count": 10,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BD",
+      "score": 46.6,
+      "event_count": 15,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SS",
+      "score": 27.54,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MQ",
+      "score": 67.81,
+      "event_count": 7,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AQ",
+      "score": 33.21,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CY",
+      "score": 59.21,
+      "event_count": 17,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MY",
+      "score": 71.51,
+      "event_count": 5,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KP",
+      "score": 69.35,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KY",
+      "score": 72.81,
+      "event_count": 48,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PT",
+      "score": 60.86,
+      "event_count": 83,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ET",
+      "score": 54.21,
+      "event_count": 27,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PW",
+      "score": 64.26,
+      "event_count": 24,
+      "has_event": 1
+    },
+    {
+      "country_iso": "HT",
+      "score": 69.64,
+      "event_count": 87,
+      "has_event": 1
+    },
+    {
+      "country_iso": "UZ",
+      "score": 56.03,
+      "event_count": 22,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TF",
+      "score": 50.99,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "PL",
+      "score": 52.99,
+      "event_count": 24,
+      "has_event": 1
+    },
+    {
+      "country_iso": "EG",
+      "score": 60.54,
+      "event_count": 12,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MA",
+      "score": 77.35,
+      "event_count": 62,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SI",
+      "score": 33.36,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SO",
+      "score": 57.6,
+      "event_count": 148,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ZM",
+      "score": 69.64,
+      "event_count": 18,
+      "has_event": 1
+    },
+    {
+      "country_iso": "UA",
+      "score": 37.53,
+      "event_count": 3,
+      "has_event": 1
+    },
+    {
+      "country_iso": "FR",
+      "score": 43.53,
+      "event_count": 10,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BM",
+      "score": 25.0,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ZA",
+      "score": 60.86,
+      "event_count": 47,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KN",
+      "score": 44.36,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ME",
+      "score": 51.03,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BR",
+      "score": 85.67,
+      "event_count": 19,
+      "has_event": 1
+    },
+    {
+      "country_iso": "OM",
+      "score": 60.86,
+      "event_count": 9,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MK",
+      "score": 56.03,
+      "event_count": 9,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GL",
+      "score": 46.6,
+      "event_count": 18,
+      "has_event": 1
+    },
+    {
+      "country_iso": "JO",
+      "score": 23.79,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "DJ",
+      "score": 48.1,
+      "event_count": 7,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IS",
+      "score": 64.26,
+      "event_count": 238,
+      "has_event": 1
+    },
+    {
+      "country_iso": "VN",
+      "score": 40.71,
+      "event_count": 28,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TH",
+      "score": 73.42,
+      "event_count": 11,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BA",
+      "score": 48.71,
+      "event_count": 19,
+      "has_event": 1
+    },
+    {
+      "country_iso": "LA",
+      "score": 36.36,
+      "event_count": 21,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KZ",
+      "score": 59.21,
+      "event_count": 40,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NO",
+      "score": 44.99,
+      "event_count": 5,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IQ",
+      "score": 90.0,
+      "event_count": 42,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GE",
+      "score": 54.49,
+      "event_count": 12,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TT",
+      "score": 69.64,
+      "event_count": 16,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BI",
+      "score": 30.54,
+      "event_count": 7,
+      "has_event": 1
+    },
+    {
+      "country_iso": "DM",
+      "score": 59.26,
+      "event_count": 10,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ES",
+      "score": 43.49,
+      "event_count": 25,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NP",
+      "score": 90.0,
+      "event_count": 100,
+      "has_event": 1
+    },
+    {
+      "country_iso": "LB",
+      "score": 22.61,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AG",
+      "score": 76.51,
+      "event_count": 24,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MN",
+      "score": 52.99,
+      "event_count": 100,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SY",
+      "score": 32.04,
+      "event_count": 25,
+      "has_event": 1
+    },
+    {
+      "country_iso": "UG",
+      "score": 57.21,
+      "event_count": 28,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SE",
+      "score": 33.21,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MZ",
+      "score": 64.26,
+      "event_count": 15,
+      "has_event": 1
+    },
+    {
+      "country_iso": "VC",
+      "score": 27.75,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "SD",
+      "score": 40.86,
+      "event_count": 3,
+      "has_event": 1
+    },
+    {
+      "country_iso": "PF",
+      "score": 30.36,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "BT",
+      "score": 34.86,
+      "event_count": 6,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AO",
+      "score": 42.03,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "LC",
+      "score": 37.49,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "AM",
+      "score": 29.5,
+      "event_count": 15,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MW",
+      "score": 62.54,
+      "event_count": 11,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BG",
+      "score": 67.81,
+      "event_count": 12,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KW",
+      "score": 29.04,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KE",
+      "score": 25.0,
+      "event_count": 3,
+      "has_event": 1
+    },
+    {
+      "country_iso": "LY",
+      "score": 33.54,
+      "event_count": 9,
+      "has_event": 1
+    },
+    {
+      "country_iso": "HR",
+      "score": 40.71,
+      "event_count": 30,
+      "has_event": 1
+    },
+    {
+      "country_iso": "ZW",
+      "score": 60.76,
+      "event_count": 10,
+      "has_event": 1
+    },
+    {
+      "country_iso": "RW",
+      "score": 55.31,
+      "event_count": 24,
+      "has_event": 1
+    },
+    {
+      "country_iso": "IL",
+      "score": 34.6,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MS",
+      "score": 25.29,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "MG",
+      "score": 48.54,
+      "event_count": 5,
+      "has_event": 1
+    },
+    {
+      "country_iso": "KR",
+      "score": 54.54,
+      "event_count": 3,
+      "has_event": 1
+    },
+    {
+      "country_iso": "MT",
+      "score": 23.79,
+      "event_count": 26,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NA",
+      "score": 43.49,
+      "event_count": 8,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GQ",
+      "score": 31.71,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "AT",
+      "score": 26.5,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "TN",
+      "score": 42.03,
+      "event_count": 5,
+      "has_event": 1
+    },
+    {
+      "country_iso": "LS",
+      "score": 30.36,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "MV",
+      "score": 35.99,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "CH",
+      "score": 30.54,
+      "event_count": 2,
+      "has_event": 1
+    },
+    {
+      "country_iso": "JM",
+      "score": 36.1,
+      "event_count": 12,
+      "has_event": 1
+    },
+    {
+      "country_iso": "NE",
+      "score": 30.21,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "BW",
+      "score": 79.43,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "GF",
+      "score": 27.54,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "GD",
+      "score": 45.54,
+      "event_count": 3,
+      "has_event": 1
+    },
+    {
+      "country_iso": "RE",
+      "score": 23.79,
+      "event_count": 0,
+      "has_event": 0
+    },
+    {
+      "country_iso": "GN",
+      "score": 30.21,
+      "event_count": 4,
+      "has_event": 1
+    },
+    {
+      "country_iso": "YT",
+      "score": 69.64,
+      "event_count": 87,
+      "has_event": 1
+    },
+    {
+      "country_iso": "DE",
+      "score": 23.79,
+      "event_count": 1,
+      "has_event": 1
+    },
+    {
+      "country_iso": "BS",
+      "score": 28.86,
+      "event_count": 1,
+      "has_event": 1
+    }
+  ]
+}
